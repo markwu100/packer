@@ -13,7 +13,7 @@ pipeline {
           stage('Install Terraform') {
               steps {
                     //sh "sudo apt-get install wget zip -y"
-                    sh "sudo cd /tmp"
+                    sh "cd /tmp"
                     sh "sudo curl -o bin_terraform.zip https://releases.hashicorp.com/terraform/'$terraform_version'/terraform_'$terraform_version'_linux_amd64.zip"
                     sh "ls -l; pwd;sudo unzip -o bin_terraform.zip"
                     sh "sudo mv terraform /usr/bin"
