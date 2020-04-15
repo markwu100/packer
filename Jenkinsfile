@@ -12,7 +12,7 @@ pipeline {
     stages {
           stage('Install Terraform') {
               steps {
-                    sh "sudo apt-get install wget zip -y"
+                    //sh "sudo apt-get install wget zip -y"
                     sh "sudo cd /tmp"
                     sh "sudo curl -o bin_terraform.zip https://releases.hashicorp.com/terraform/'$terraform_version'/terraform_'$terraform_version'_linux_amd64.zip"
                     sh "ls -l; pwd;sudo unzip -o bin_terraform.zip"
@@ -23,7 +23,7 @@ pipeline {
           }
           stage('Install Packer') {
               steps {
-                    sh "sudo apt-get install wget zip -y"
+                   // sh "sudo apt-get install wget zip -y"
                     sh "cd /tmp"
                     sh "curl -o bin_packer.zip https://releases.hashicorp.com/packer/$packer_version/packer_'$packer_version'_linux_amd64.zip"
                     sh "unzip bin_packer.zip"
