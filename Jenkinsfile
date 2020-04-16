@@ -29,13 +29,13 @@ pipeline {
                     sh 'pwd'
                     sh "unzip -o /tmp/bin_packer.zip"
                     sh "sudo mv /tmp/packer /usr/bin"
-                    sh "rm -rf /tmp/bin_packer.zip"
+                    sh "sudo rm -rf /tmp/bin_packer.zip"
                     sh "packer version"
               }
           }
           stage('code checkout') {
                steps {
-                    git branch: 'master', url: 'https://github.com/aleti-pavan/packer-ansible-terraform-demo.git'
+                    git branch: 'master', url: 'https://github.com/markwu100/packer.git'
                     }
           }
           stage('Build AMI') {
