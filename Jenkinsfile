@@ -10,17 +10,17 @@ pipeline {
         secret_key = 'input_your_secret_key'
     }
     stages {
-          stage('Install Terraform') {
-              steps {
+         // stage('Install Terraform') {
+           //   steps {
                     //sh "sudo apt-get install wget zip -y"
-                    sh "cd /tmp"
-                    sh "curl -o terraform.zip https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip"
-                    sh "ls -l; pwd; unzip -y terraform.zip"
-                    sh "sudo mv ./terraform /usr/bin"
-                    sh "sudo rm -rf bin_terraform.zip"
-                    sh "terraform version"
-              }
-          }
+                    //sh "cd /tmp"
+                    //sh "curl -o terraform.zip https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip"
+                    //sh "ls -l; pwd; unzip -o terraform.zip"
+                    //sh "sudo mv ./terraform /usr/bin"
+                    //sh "sudo rm -rf bin_terraform.zip"
+                    //sh "terraform version"
+             // }
+         // }
           stage('Install Packer') {
               steps {
                    // sh "sudo apt-get install wget zip -y"
