@@ -23,16 +23,14 @@ pipeline {
          // }
           stage('Install Packer') {
               steps {
-                  dir('/tmp'){
                    // sh "sudo apt-get install wget zip -y"
-                    //sh "cd /tmp"
-                    sh "curl -o bin_packer.zip https://releases.hashicorp.com/packer/$packer_version/packer_'$packer_version'_linux_amd64.zip"
+                    sh "cd /tmp"
+                    sh "curl -o /tmp/bin_packer.zip https://releases.hashicorp.com/packer/$packer_version/packer_'$packer_version'_linux_amd64.zip"
                     sh 'pwd'
-                    sh "unzip -o bin_packer.zip"
-                    sh "sudo mv packer /usr/bin"
-                    sh "rm -rf bin_packer.zip"
+                    sh "unzip -o /tmp/bin_packer.zip"
+                    sh "sudo mv /tmp/packer /usr/bin"
+                    sh "rm -rf /tmp/bin_packer.zip"
                     sh "packer version"
-                  }
               }
           }
           stage('code checkout') {
