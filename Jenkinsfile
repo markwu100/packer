@@ -27,7 +27,7 @@ pipeline {
                     sh "cd /tmp"
                     sh "curl -o /tmp/bin_packer.zip https://releases.hashicorp.com/packer/$packer_version/packer_'$packer_version'_linux_amd64.zip"
                     sh 'pwd'
-                    sh "unzip -o /tmp/bin_packer.zip"
+                    sh "cd /tmp && unzip -o /tmp/bin_packer.zip"
                     sh "sudo mv /tmp/packer /usr/bin"
                     sh "sudo rm -rf /tmp/bin_packer.zip"
                     sh "packer version"
