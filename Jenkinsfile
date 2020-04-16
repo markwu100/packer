@@ -26,6 +26,7 @@ pipeline {
                    // sh "sudo apt-get install wget zip -y"
                     sh "cd /tmp"
                     sh "curl -o bin_packer.zip https://releases.hashicorp.com/packer/$packer_version/packer_'$packer_version'_linux_amd64.zip"
+                    sh 'pwd'
                     sh "unzip -o bin_packer.zip"
                     sh "sudo mv packer /usr/bin"
                     sh "rm -rf bin_packer.zip"
